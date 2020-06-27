@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>PIZZA main page</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PiZZa</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Pizza is alive!</h1>
+        <p>The Best PiZZa IN THE WORLD</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Toppings</h2>
+            <p>Choose your taste of pizza !
+            <ul>
+                <li><a href="#" th:href="@{'/toppings/list'}" style="margin-right: 5px;">List</a>all of your toppings</li>
+                <li><a href="#" th:href="@{'/toppings/new'}" style="margin-right: 5px;">Add new</a>toppings</li>
+            </ul>
+            Planned:
+            <ul>
+                <li>New sauces !</li>
+                <li>New toppings !</li>
+            </ul>
+            <p><a class="btn btn-default" href="/toppings/" role="button" th:href="@{'/toppings/'}" >All Toppings &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Pizza</h2>
+            <p>Chose your pizza!</p>
+            <ul>
+                <li><a href="#" th:href="@{'/pizza/new'}" style="margin-right: 5px;">Add new</a>pizza</li>
+            </ul>
+            Planned:
+            <ul>
+                <li>New pizzas !</li>
+                <li>Pizza photos !</li>
+            </ul>
+            <p><a class="btn btn-default" href="/pizza/" role="button" th:href="@{'/artists/'}" >All Artists &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Size</h2>
+            <p>Sizes of your pizza.</p>
+            <ul>
+                <li><a href="#" th:href="@{'/artist/list'}" style="margin-right: 5px;">List</a>all sizes</li>
+                <li><a href="#" th:href="@{'/artist/new'}" style="margin-right: 5px;">Add new</a>size</li>
+            </ul>
+            Planned:
+            <ul>
+                <li>New Sizes !</li>
+                <li>New Promotions !</li>
+            </ul>
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/sizes/'}" >All Sizes &raquo;</a></p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2019 NoCodeX, LLC.</p>
+    </footer>
+</div>
+</body>
+</html>
