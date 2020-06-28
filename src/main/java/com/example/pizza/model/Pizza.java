@@ -27,7 +27,7 @@ public class Pizza {
     private String firstName;
     private String number;
 
-    @ManyToMany(mappedBy = "pizzas")
+    @ManyToMany(mappedBy = "pizza")
     private Set<Toppings> toppings = new HashSet<>();
 
     public Pizza() {

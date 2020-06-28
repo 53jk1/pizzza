@@ -14,7 +14,7 @@ public class SizeController{
     private SizeRepository sizeRepository;
     private com.example.pizza.converters.SizeCommandToSize sizeCommandToSize;
 
-    public SizeController(SizeRepository sizeRepository, com.example.pizza.converters.SizeCommandToSize sizeCommandToSized) {
+    public SizeController(SizeRepository sizeRepository, com.example.pizza.converters.SizeCommandToSize sizeCommandToSize) {
         this.sizeRepository = sizeRepository;
         this.sizeCommandToSize = sizeCommandToSize;
     }
@@ -47,7 +47,7 @@ public class SizeController{
     @PostMapping("size")
     public String saveOrUpdate(@ModelAttribute com.example.pizza.commands.SizeCommand command){
 
-        Optional<Size> sizeOptional = sizeRepository.getSizeByNr(command.getSize());
+        Optional<Size> sizeOptional = sizeRepository.getSizeById(command.getSize());
 
         if (!sizeOptional.isPresent()) {
             Size detachedSize = sizeCommandToSize.convert(command);

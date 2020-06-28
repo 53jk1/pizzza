@@ -7,6 +7,7 @@ import com.example.pizza.repositories.PizzaRepository;
 import com.example.pizza.repositories.SizeRepository;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
+import org.springframework.lang.Nullable;
 
 import java.util.Optional;
 
@@ -22,9 +23,9 @@ public class ToppingsCommandToToppings implements Converter<ToppingsCommand, Top
     }
 
     @lombok.Synchronized
-    @org.springframework.lang.Nullable
+    @Nullable
     @Override
-    public Toppings convert(@javax.annotation.Nonnull ToppingsCommand source) {
+    public Toppings convert(ToppingsCommand source) {
         if (source == null) {
             return null;
         }
@@ -41,13 +42,13 @@ public class ToppingsCommandToToppings implements Converter<ToppingsCommand, Top
         if (size.isPresent()) {
             toppings.setSize(size.get());
         } else {
-            toppings.setSize(sizeRepository.getSizeByNr("Unknown").get());
+            toppings.setSize(sizeRepository.getSizeById(0L).get());
         }
 
         Optional<Pizza> pizza = pizzaRepository.findById(source.getPizzaId());
 
         if (pizza.isPresent()) {
-            toppings.getPizzas().add(pizza.get());
+            toppings.getPizza().add(pizza.get());
         }
 
         return toppings;

@@ -16,16 +16,16 @@ public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String size;
+    private Long size;
     private String price;
 
     public Size() {
     }
-    public Size(String size) {
+    public Size(Long size) {
         this.size = size;
     }
 
-    public Size(String size, String price) {
+    public Size(Long size, String price) {
         this.size = size;
         this.price = price;
     }
@@ -47,11 +47,11 @@ public class Size {
         this.id = id;
     }
 
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

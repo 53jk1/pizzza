@@ -19,7 +19,6 @@ public class SizeCommandToSize implements Converter<com.example.pizza.commands.S
         }
 
         final Size size = new Size();
-        size.setSize(source.getSize());
         size.setPrice(source.getPrice());
 
 

@@ -29,39 +29,5 @@ public class DBInflater implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     private void initData() {
-
-        Pizza margarita = new Pizza("Margarita", "1");
-        Size medium3 = new Size("32");
-        Toppings two3 = new Toppings("tomato", "SAN FRANCISCO STYLE", "---",
-                "---", medium3);
-        margarita.getToppings().add(two3);
-        two3.getPizzas().add(margarita);
-        sizeRepository.save(medium3);
-        pizzaRepository.save(margarita);
-        toppingsRepository.save(two3);
-
-
-        Pizza classic = new Pizza("Classic", "2");
-        Size medium = new Size("32");
-        Toppings two1 = new Toppings("tomato", "SAN FRANCISCO STYLE", "ham",
-                "mushrooms", medium);
-        classic.getToppings().add(two1);
-        two1.getPizzas().add(classic);
-        sizeRepository.save(medium);
-        pizzaRepository.save(classic);
-        toppingsRepository.save(two1);
-
-
-        Pizza americana = new Pizza("Americana", "3");
-        Size medium2 = new Size("32");
-        Toppings two2 = new Toppings("tomato", "SAN FRANCISCO STYLE", "cherry tomatoes",
-                "mushrooms", medium2);
-        americana.getToppings().add(two2);
-        two2.getPizzas().add(americana);
-        sizeRepository.save(medium2);
-        pizzaRepository.save(americana);
-        toppingsRepository.save(two2);
-
-
     }
 }

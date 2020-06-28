@@ -33,7 +33,7 @@ public class Toppings {
                 ", toppings1='" + toppings1 + '\'' +
                 ", toppings2='" + toppings2 + '\'' +
                 ", size=" + size +
-                ", pizzas=" + pizzas +
+                ", pizza=" + pizza +
                 '}';
     }
 
@@ -70,15 +70,15 @@ public class Toppings {
         return size;
     }
 
-    public Set<Pizza> getPizzas() {
-        return pizzas;
+    public Set<Pizza> getPizza() {
+        return pizza;
     }
 
     @ManyToOne
     private Size size;
 
     @ManyToMany
-    private final Set<Pizza> pizzas = new HashSet<>();
+    private final Set<Pizza> pizza = new HashSet<>();
 
     public Toppings(String sauce, String dough, String toppings1, String toppings2, Size size) {
         this.sauce = sauce;

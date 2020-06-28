@@ -1,14 +1,13 @@
 package com.example.pizza.commands;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class SizeCommand {
     private Long id;
-    private String size;
+    private Long size;
     private String price;
 
     public SizeCommand() {
@@ -23,11 +22,11 @@ public class SizeCommand {
         this.id = id;
     }
 
-    public String getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
@@ -39,7 +38,7 @@ public class SizeCommand {
         this.price = price;
     }
 
-    public SizeCommand(Long id, String size, String price) {
+    public SizeCommand(Long id, Long size, String price) {
         this.id = id;
         this.size = size;
         this.price = price;

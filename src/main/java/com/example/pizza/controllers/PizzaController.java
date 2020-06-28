@@ -7,6 +7,7 @@ import com.example.pizza.repositories.ToppingsRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import com.example.pizza.converters.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -16,7 +17,7 @@ public class PizzaController {
 
     private PizzaRepository pizzaRepository;
     private com.example.pizza.repositories.ToppingsRepository toppingsRepository;
-    private com.example.muslibry5k.converters.PizzaCommandToPizza pizzaCommandToPizza;
+    private com.example.pizza.converters.PizzaCommandToPizza pizzaCommandToPizza;
 
     public PizzaController(PizzaRepository pizzaRepository, ToppingsRepository toppingsRepository) {
         this.pizzaRepository = pizzaRepository;
@@ -25,7 +26,7 @@ public class PizzaController {
 
     @RequestMapping(value = {"/pizzas", "/pizza/list"})
     public String getPizzas(Model model) {
-        model.addAttribute("artists", pizzaRepository.findAll());
+        model.addAttribute("pizzas", pizzaRepository.findAll());
         return "pizza/list";
     }
 
