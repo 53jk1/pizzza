@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.ico">
+
+
+    <title th:text="${toppings.sauce}">The song details</title>
+</head>
+<body>
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel-group">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title" th:text="${toppings.sauce}">Pizza TOMATO (TOMATO here)!</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <h5><b>Pizza:</b></h5>
+                            </div>
+                            <div class="col-md-6">
+                                <ul th:remove="all">
+                                    <li>Pizza Margarita</li>
+                                    <li>Pizza Classic</li>
+                                    <li>Pizza Americana</li>
+                                </ul>
+                                <span th:each="pizza : ${toppings.pizzas}">
+                                        <h5 th:text="${pizza.firstName + ' ' + pizza.number} + (${pizzaStat.count} == 1 ? '' : ' & ')"></h5>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <h5><b>Dough:</b></h5>
+                            </div>
+                            <div class="col-md-1">
+                                <h5 th:text="${song.dough}">SAN FRANCISCO STYLE</h5>
+                            </div>
+                            <div class="col-md-1">
+                                <h5><b>First Topping:</b></h5>
+                            </div>
+                            <div class="col-md-2">
+                                <h5 th:text="${song.toppings1}">HAM</h5>
+                            </div>
+                            <div class="col-md-1">
+                                <h5><b>Second Topping</b></h5>
+                            </div>
+                            <div class="col-md-1">
+                                <h5 th:text="${song.toppings2}">MUSHROOMS</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <h5><b>Size:</b></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 th:text="${toppings.size.size}">32 cm</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
